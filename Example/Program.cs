@@ -24,7 +24,6 @@
 namespace Example
 {
     using Microsoft.Extensions.Logging;
-    using Microsoft.Extensions.Logging.Debug;
 
     /// <summary>
     /// All the logging messages this assembly outputs.
@@ -124,8 +123,12 @@ namespace Example
     {
         static void Main()
         {
-            using var provider = new DebugLoggerProvider();
-            var logger = provider.CreateLogger("LoggingExample");
+            using var loggerFactory = LoggerFactory.Create(builder =>
+            {
+                builder.AddConsole();
+            });
+            
+            var logger = loggerFactory.CreateLogger("LoggingExample");
 
             // Approach #1: Extension method on ILogger
             logger.CouldNotOpenSocket("microsoft.com");
