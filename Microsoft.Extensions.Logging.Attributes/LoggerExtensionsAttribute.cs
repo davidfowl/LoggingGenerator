@@ -15,7 +15,7 @@ namespace Microsoft.Extensions.Logging
     /// The declaration of the interface to which this attribute is applied cannot be
     /// nested in another type and cannot be generic.
     /// </remarks>
-    [System.AttributeUsage(System.AttributeTargets.Interface, AllowMultiple = false)]
+    [System.AttributeUsage(System.AttributeTargets.Interface | AttributeTargets.Class, AllowMultiple = false)]
     public sealed class LoggerExtensionsAttribute : Attribute
     {
         /// <summary>
