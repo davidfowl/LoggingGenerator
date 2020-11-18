@@ -39,6 +39,14 @@ namespace Microsoft.Extensions.Logging
         public int EventId { get; set; }
 
         /// <summary>
+        /// Gets or sets the logging event name for the logging method.
+        /// </summary>
+        /// <remarks>
+        /// This will be inferred from the method name if not specified.
+        /// </remarks>
+        public string? EventName { get; set; }
+
+        /// <summary>
         /// Gets or sets the logging level for the logging method.
         /// </summary>
         public LogLevel Level { get; set; }
