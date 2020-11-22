@@ -56,6 +56,7 @@ namespace Example
         {
             using var loggerFactory = LoggerFactory.Create(builder =>
             {
+                builder.SetMinimumLevel(LogLevel.Trace);
                 builder.AddConsole().AddJsonConsole(o =>
                 {
                     // This will let us see the structure going to the logger
